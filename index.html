@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battle Colieseum Mugen Draft</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Jump Force Mugen Draft</h1>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="main-container">
+    <!-- Team Management Section -->
+    <div class="box" id="teamManagement">
+      <h2>Team Management</h2>
+      
+      <!-- Number of Teams Selector -->
+      <div>
+        <label for="numberOfTeams">Number of Teams (1–12):</label>
+        <input type="number" id="numberOfTeams" min="1" max="12" value="1" oninput="updateTeams()">
+      </div>
+      
+      <!-- Container for Teams -->
+      <div id="teamsContainer">
+        <!-- Teams will be dynamically generated here -->
+      </div>
+    </div>
+
+    <!-- Draft Summary Section -->
+    <div class="box" id="draftSummary">
+      <h2>Draft Summary</h2>
+      <div id="summaryBoard">
+        <!-- Summary updates dynamically -->
+      </div>
+    </div>
+
+
+
+<!-- Character Roll Section -->
+<section class="box" id="characterRoll">
+  <h2>Roll for Character</h2>
+  <div class="roll-container">
+    <button onclick="loadCharacterPool()">Load Character Pool</button>
+    <button onclick="rollCharacter()" disabled id="rollButton">Roll for Character</button>
+    <button onclick="removeCharacter()" id="removeButton" disabled>Remove Character</button>
+    <button onclick="addCharacterBack()" id="addButton" disabled>Add Back Character</button>
+  </div>
+  <div class="number-display" id="characterDisplay">No Character Selected</div>
+</section>
+
+<!-- Export Teams Button -->
+<div class="box">
+  <h2>Player Draft Board</h2>
+  <div id="playerBoard"></div>
+  <button onclick="exportTeams()">Export Teams</button>
+</div>
+
+
+
+
+  <script src="scripts.js"></script>
+</body>
+</html>
